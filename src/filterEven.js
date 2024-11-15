@@ -4,6 +4,11 @@ function filterEven(numbers){
 
     if(!Array.isArray(numbers)) throw new Error('Nem tömböt kapok argomentumként')
 
+        if(!numbers.every( item=> typeof item === 'number')){
+
+         throw new Error('Argument must be an array of numbers -- Az argomentumnak minden elemének szuámnak kell lennie');
+    }
+
     const evenNumbers = numbers.filter( (item,index)=>{
         
         const [,reminder] = divideNums(item, 2);
